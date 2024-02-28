@@ -1,25 +1,22 @@
-// drawing bar chart
-float [] chart = new float[100];
+// array variable declaration
+float [] chart = new float [100];
 
-void setup() {
-  size(800, 800);
+void setup(){
+  size(600, 600);
   noStroke();
-  //frameRate(30);
-  for(int i = 0; i < chart.length; i++){
-    chart[i] = random(width/100);
-  }  
+  frameRate(10);
 }
 
-void draw() {
+void draw(){
   background(255);
-  
-  for(int i = 0; i < chart.length; i++){
-    chart[i] += random(-100, 100);
-    chart[i] = constrain(chart[i], 0, width);
+  for(int y = 0; y < chart.length; y++){
+    chart[y] += random(-10, +10);
+    chart[y] = constrain(chart[y], 0, 100);
+    //chart[y] = random(100);
   }
   
-  for(int i = 0; i < chart.length; i++){
-    fill(chart[i]*255/width, 0, 0);
-    rect(0, i*height/chart.length, chart[i], height/chart.length);
+  for(int y = 0; y < chart.length; y++){
+    fill(y * 255 / chart.length, 0, 0);
+    rect(0, y * (height/chart.length), chart[y]*width/100, height/chart.length);
   }
 }

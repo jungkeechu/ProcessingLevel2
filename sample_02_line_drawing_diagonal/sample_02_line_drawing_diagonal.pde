@@ -8,11 +8,11 @@ void setup(){
 }
 
 void draw(){
-  int slant = 150;
+  int slant = 300;
   int col = -slant;
   
   while(col < width){
     line(col, 0, col+slant, height);
-    col += 4;
+    col += 10;
   }
 }

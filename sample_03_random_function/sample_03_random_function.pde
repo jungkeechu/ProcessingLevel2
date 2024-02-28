@@ -4,8 +4,7 @@
 */
 
 int i = 0;
-
 while(i < 10){
-  println(random(100));
-  i++;
+  println(int(random(100)));
+  i++; // i += 1; i = i + 1;
 }

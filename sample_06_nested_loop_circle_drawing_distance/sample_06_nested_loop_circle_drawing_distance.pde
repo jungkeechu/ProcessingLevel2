@@ -1,20 +1,16 @@
-float max_distance;
-
-void setup() {
-  size(600, 600);
+void setup(){
+  size(900, 900);
   noStroke();
-  max_distance = dist(0, 0, width, height) / 2;
 }
 
-void draw() {
+void draw(){
   background(0);
-  
-  int inc = 20;
-  for(int i = 0; i <= width; i += inc) {
-    for(int j = 0; j <= height; j += inc) {
-      float d = dist(mouseX, mouseY, i, j);
-      float radius = d / max_distance * inc;
-      ellipse(i, j, radius, radius);
+  for(int x = 0; x < width; x += 30){
+    for(int y = 0; y < height; y += 30){
+      float radius = dist(mouseX, mouseY, x, y);
+      radius = radius / 15;
+      ellipse(x+15, y+15, radius, radius);
     }
   }
+  
 }
